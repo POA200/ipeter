@@ -17,6 +17,7 @@ export const webDevProjects = [
       "Led the end-to-end UI/UX design using accessible information architecture to simplify technical concepts.",
     tech: "Built a high-performance frontend using React.js and Tailwind CSS, optimizing asset delivery for fast loading.",
     github: "https://github.com/POA200/blocklift",
+    banner: "/Blocklift-preview.webp",
   },
   {
     title: "GENSTACKS",
@@ -29,6 +30,7 @@ export const webDevProjects = [
       "Developed a flexible, intuitive user interface to manage asset layering and metadata generation.",
     tech: "Integrated Clarity smart contract interactions to streamline the entire on-chain asset creation flow.",
     github: "https://github.com/POA200/genstacks",
+    banner: "/Genstacks-preview.webp",
   },
   {
     title: "OAKDAO",
@@ -41,6 +43,7 @@ export const webDevProjects = [
       "Designed and implemented a core landing page and learning system that clearly communicates the mission, and teaches new members about web3.",
     tech: "Prioritized brand consistency and accessibility to build user trust and encourage community participation.",
     github: "https://github.com/POA200/oakdao",
+    banner: "/Oakdao-preview.webp",
   },
   {
     title: "STACKS WRAPPED",
@@ -53,6 +56,7 @@ export const webDevProjects = [
       "Designed compelling data visualizations for transaction metrics badge rewards to boost user confidence.",
     tech: "Utilized Stacks.js and integrated the Stacks Wallet API to securely retrieve and display personalized on-chain data.",
     github: "https://github.com/POA200/stackswrapped",
+    banner: "/Stackswrapped-preview.webp",
   },
 ];
 
@@ -105,11 +109,20 @@ export function WebDevProjects() {
           } transition-all duration-1000`}
           style={{ transitionDelay: `${idx * 200}ms` }}
         >
-          {/* Banner Placeholder */}
-          <div className="w-full aspect-[5/3] bg-primary/10 rounded-lg mb-3 flex items-center justify-center">
-            <span className="text-muted-foreground text-xs">
-              Project Banner
-            </span>
+          {/* Project Banner */}
+          <div className="w-full aspect-[5/3] bg-primary/10 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
+            {project.banner ? (
+              <img
+                src={project.banner}
+                alt={project.title + " banner"}
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
+            ) : (
+              <span className="text-muted-foreground text-xs">
+                Project Banner
+              </span>
+            )}
           </div>
           <h3 className="text-lg font-bold text-primary mb-1">
             {project.title}
