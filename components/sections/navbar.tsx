@@ -1,60 +1,54 @@
 "use client";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
 
 function scrollToId(id: string) {
   const el = document.getElementById(id);
   if (el) {
     window.scrollTo({
-      top: el.offsetTop - 80, // adjust for navbar height
+      top: el.offsetTop - 80,
       behavior: "smooth",
     });
   }
 }
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <nav className="w-full bg-primary/4 backdrop-blur border-b border-primary/60 flex items-center justify-between px-6 md:px-46 py-3 md:py-5 fixed top-0 z-40 overflow-x-hidden">
-      <a
-        href="/"
-        className="text-primary font-bold text-xl cursor-pointer"
-        onClick={(e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-      >
-        iPeter
-      </a>
-      {/* Desktop Nav */}
-      <div className="hidden md:flex gap-2">
-        <Button variant="link" asChild>
-          <a
-            href="#skills"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToId("skills");
-            }}
+    <nav className="fixed top-0 inset-x-0 w-full bg-primary/4 backdrop-blur-md border-b border-primary/50 z-[100]">
+      <div className="mx-auto flex h-16 items-center justify-between px-4 md:px-12 lg:px-24">
+        <a
+          href="/"
+          className="text-primary font-bold text-xl flex-shrink-0"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          iPeter
+        </a>
+
+        {/* Desktop Links - Hidden on Mobile */}
+        <div className="hidden md:flex items-center gap-6">
+          <button
+            onClick={() => scrollToId("skills")}
+            className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
           >
             Skills
-          </a>
-        </Button>
-        <Button variant="link" asChild>
-          <a
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToId("projects");
-            }}
+          </button>
+          <button
+            onClick={() => scrollToId("projects")}
+            className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
           >
             Projects
-          </a>
-        </Button>
-      </div>
-      <div className="md:block">
-        <Button asChild className="cursor-pointer rounded-full" size="lg">
+          </button>
+        </div>
+
+        {/* Action Button - Always Visible, slightly smaller on mobile */}
+        <Button asChild className="rounded-full shadow-sm" size="sm">
           <Link href="#contact">
-            Contact Me
+            <span className="hidden xs:inline">Contact Me</span>
+            <span className="xs:hidden">Contact Me</span>
             <ArrowUpRight className="h-4 w-4" />
           </Link>
         </Button>

@@ -8,16 +8,16 @@ import Footer from "@/components/sections/footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="relative flex flex-col min-h-screen overflow-x-hidden">
       <Navbar />
-      <main>
+      <main className="flex-grow">
         <Hero />
         <Skills />
         <Projects />
         <BottomCTA />
         <Contact />
-        <Footer />
       </main>
-    </>
+      <Footer />
+    </div>
   );
 }
