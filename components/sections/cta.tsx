@@ -2,10 +2,31 @@
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 
+import { useRef, useEffect } from "react";
+
 export default function BottomCTA() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const ref = sectionRef.current;
+    if (!ref) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          ref.classList.add("pulse-in");
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(ref);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="w-full flex justify-center items-center py-16 md:py-24 px-4 md:px-0">
-      <div className="w-full max-w-4xl bg-primary/5 border border-primary/60 rounded-3xl p-8 md:p-16 flex flex-col items-center text-center">
+      <div
+        ref={sectionRef}
+        className="w-full max-w-4xl bg-primary/5 border border-primary/60 rounded-3xl p-8 md:p-16 flex flex-col items-center text-center"
+      >
         <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
           Ready to scale your vision?
         </h2>

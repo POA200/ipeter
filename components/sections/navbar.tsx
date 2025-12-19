@@ -46,11 +46,15 @@ export default function Navbar() {
 
         {/* Action Button - Always Visible, slightly smaller on mobile */}
         <Button asChild className="rounded-full shadow-sm" size="sm">
-          <Link href="#contact">
+          <a
+            href="https://t.me/iPetercrx"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className="hidden xs:inline">Contact Me</span>
             <span className="xs:hidden">Contact Me</span>
             <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          </a>
         </Button>
       </div>
     </nav>
