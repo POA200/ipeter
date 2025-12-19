@@ -2,6 +2,7 @@
 import { useRef, useEffect } from "react";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import { Card } from "../ui/card";
 
 // Placeholder data for UI UX Design projects
 export const uiuxProjects = [
@@ -54,41 +55,41 @@ export function UiUxProjects() {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-18 mt-8">
       {uiuxProjects.map((project, idx) => (
-        <div
+        <Card
           key={project.title}
           ref={(el) => {
             cardRefs.current[idx] = el;
           }}
-          className={`bg-primary/5 border border-primary/30 rounded-2xl p-6 shadow-md flex flex-col gap-4 min-h-[320px] opacity-0 ${
+          className={`w-full bg-primary/5 border border-primary/30 rounded-xl p-4 flex flex-col gap-3 opacity-0 ${
             idx % 2 === 0 ? "-translate-x-12" : "translate-x-12"
           } transition-all duration-1000`}
           style={{ transitionDelay: `${idx * 200}ms` }}
         >
           {/* Banner Placeholder */}
-          <div className="w-full aspect-[5/3] bg-primary/10 rounded-lg mb-4 flex items-center justify-center">
+          <div className="w-full aspect-[5/3] bg-primary/10 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
             <span className="text-muted-foreground text-xs">
               Project Banner
             </span>
           </div>
-          <h3 className="text-xl font-bold text-primary mb-1">
+          <h3 className="text-lg font-bold text-primary mb-1">
             {project.title}
           </h3>
-          <p className="text-sm text-muted-foreground mb-2">
+          <p className="text-xs text-muted-foreground mb-1">
             {project.description}
           </p>
           <Button
             asChild
             variant="default"
             size={"lg"}
-            className="mt-auto w-full px-6 flex items-center gap-auto"
+            className="mt-auto w-full flex items-center gap-auto "
           >
             <a href={project.github} target="_blank" rel="noopener noreferrer">
               View Project <ArrowRight className="size-4" />
             </a>
           </Button>
-        </div>
+        </Card>
       ))}
     </div>
   );
