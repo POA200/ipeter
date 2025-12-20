@@ -1,3 +1,54 @@
+# iPeter Portfolio
+
+> **Web3 Designer & Developer**
+
+Welcome to my portfolio! I’m Peter, a creative Graphic, UI/UX Designer and Web Developer specializing in the Web3 space. I design and build intuitive graphics, interfaces, and dApps that bridge the gap between complex blockchain logic and user-centric design.
+
+## 🚀 About Me
+
+- **Skills:**
+  - UI/UX Design (Figma, Canva, Photoshop)
+  - Front-End Development (HTML, CSS, JavaScript, TypeScript, React, Next.js, TailwindCSS)
+  - Blockchain (Clarity, Stacks)
+- **Focus:** Web3, intuitive user experiences, visually compelling interfaces
+- **Location:** Remote
+
+## 🧩 Projects
+
+Explore my case studies and featured work:
+
+- **Web Development:** Modern, responsive web apps and dApps
+- **Visual & Graphic Design:** Branding, posters, and digital art
+- **UI/UX Design:** User flows, wireframes, and prototypes
+
+See the [Projects section](#projects) for details.
+
+## 📫 Contact
+
+Want to work with me or collaborate?
+
+- **Email:** [ipeter1010x@gmail.com](mailto:ipeter1010x@gmail.com)
+- **Telegram:** [@iPetercrx](https://t.me/iPetercrx)
+- **Twitter/X:** [@iPeter_crx](https://x.com/iPeter_crx)
+- **GitHub:** [POA200](https://github.com/POA200)
+- **Behance:** [peteroluwaseyi1](https://behance.net/peteroluwaseyi1)
+
+Or use the contact form on the website!
+
+## 🛠️ Getting Started
+
+To run locally:
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+© 2025 iPeter. All rights reserved.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
