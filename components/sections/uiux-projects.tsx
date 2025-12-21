@@ -7,14 +7,22 @@ import { Card } from "../ui/card";
 // Placeholder data for UI UX Design projects
 export const uiuxProjects = [
   {
-    title: "UI UX Project 1",
-    description: "Placeholder for a UI/UX design project.",
+    title: "Aquacoin UI Design",
+    description: "Aquacoin UI/UX design project.",
     github: "#",
+    banner: "/UI/AquacoinUI-banner.png",
   },
   {
-    title: "UI UX Project 2",
-    description: "Placeholder for a UI/UX design project.",
+    title: "Blocklift UI Design",
+    description: "Blocklift UI/UX design project.",
     github: "#",
+    banner: "/UI/BlockliftUI-banner.png",
+  },
+  {
+    title: "Bubblr UI Design",
+    description: "Bubblr UI/UX design project.",
+    github: "#",
+    banner: "/UI/Bubblr-banner.png",
   },
 ];
 
@@ -67,11 +75,19 @@ export function UiUxProjects() {
           } transition-all duration-1000`}
           style={{ transitionDelay: `${idx * 200}ms` }}
         >
-          {/* Banner Placeholder */}
+          {/* Banner Image */}
           <div className="w-full aspect-[5/3] bg-primary/10 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
-            <span className="text-muted-foreground text-xs">
-              Project Banner
-            </span>
+            {project.banner ? (
+              <img
+                src={project.banner}
+                alt={project.title + " banner"}
+                className="object-cover w-full h-full rounded-lg"
+              />
+            ) : (
+              <span className="text-muted-foreground text-xs">
+                Project Banner
+              </span>
+            )}
           </div>
           <h3 className="text-lg font-bold text-primary mb-1">
             {project.title}
