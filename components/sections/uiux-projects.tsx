@@ -101,8 +101,12 @@ export function UiUxProjects() {
             size={"lg"}
             className="mt-auto w-full flex items-center gap-auto "
           >
-            <a href={project.github} target="_blank" rel="noopener noreferrer">
-              View Project <ArrowRight className="size-4" />
+            <a
+              href="https://www.behance.net/peteroluwaseyi1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View <ArrowRight className="size-4" />
             </a>
           </Button>
         </Card>
