@@ -84,7 +84,7 @@ export default function Skills() {
         >
           <Code2 className="text-primary mb-2" size={36} />
           <h3 className="text-xl font-bold text-primary mb-2 text-center">
-            FRONT-END
+            WEB DEVELOPMENT
           </h3>
           <div className="flex flex-wrap gap-4 items-center justify-center mb-4">
             <Image
