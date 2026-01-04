@@ -13,6 +13,8 @@ export default function BottomCTA() {
       ([entry]) => {
         if (entry.isIntersecting) {
           ref.classList.add("pulse-in");
+        } else {
+          ref.classList.remove("pulse-in");
         }
       },
       { threshold: 0.2 }

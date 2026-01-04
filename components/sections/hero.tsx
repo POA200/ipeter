@@ -85,7 +85,7 @@ function Hero() {
             asChild
           >
             <a
-              href="/iPeter-Resume.pdf"
+              href="/iPeter-CV.pdf"
               download
               className="flex items-center gap-2"
             >

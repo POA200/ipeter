@@ -56,6 +56,13 @@ export default function Skills() {
             <Image
               src="/figma.svg"
               alt="Figma"
+              width={42}
+              height={42}
+              style={{ width: "auto", height: "auto" }}
+            />
+            <Image
+              src="/photoshop.svg"
+              alt="Photoshop"
               width={32}
               height={32}
               style={{ width: "auto", height: "auto" }}
@@ -68,10 +75,10 @@ export default function Skills() {
               style={{ width: "auto", height: "auto" }}
             />
             <Image
-              src="/photoshop.svg"
-              alt="Photoshop"
-              width={32}
-              height={32}
+              src="/afinity.svg"
+              alt="Afinity"
+              width={42}
+              height={42}
               style={{ width: "auto", height: "auto" }}
             />
           </div>
@@ -132,13 +139,6 @@ export default function Skills() {
             <Image
               src="/nextjs.svg"
               alt="Next.js"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/nodejs.svg"
-              alt="Node.js"
               width={32}
               height={32}
               style={{ width: "auto", height: "auto" }}
