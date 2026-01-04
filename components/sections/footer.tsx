@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="w-full flex justify-center items-center py-12 px-2 md:px-0">
       <div className="w-full py-8 md:py-16 px-4 md:px-62 flex flex-col md:flex-row gap-8 md:gap-0 justify-between">
@@ -11,7 +13,7 @@ export default function Footer() {
             Web3 Designer & Dev
           </span>
           <span className="text-muted-foreground text-base mt-4">
-            © 2025 iPeter.
+            © {currentYear} iPeter.
           </span>
         </div>
         {/* Right: Links */}
