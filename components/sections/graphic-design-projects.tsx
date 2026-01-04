@@ -48,6 +48,13 @@ export const graphicDesignProjects = [
     banner: "/graphics/X-header-designs.webp",
     github: "#",
   },
+  {
+    title: "Stackswars (Brand Identity Design)",
+    description:
+      "Architected the complete visual identity for a Web3 gaming ecosystem. Designed a scalable logo system, comprehensive brand guidelines, and curated moodboards to define the project's aesthetic. Delivered high-impact social graphics and cover imagery to ensure a cohesive brand presence across all platforms.",
+    banner: "/graphics/Stackswars-brand-design.webp",
+    github: "#",
+  },
 ];
 
 export function GraphicDesignProjects() {
