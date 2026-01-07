@@ -52,35 +52,52 @@ export default function Skills() {
           <h3 className="text-xl font-bold text-primary mb-2 text-center">
             UI UX & DESIGN
           </h3>
-          <div className="flex gap-4 items-center mb-4">
-            <Image
-              src="/figma.svg"
-              alt="Figma"
-              width={42}
-              height={42}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/photoshop.svg"
-              alt="Photoshop"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/canva.svg"
-              alt="Canva"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/afinity.svg"
-              alt="Afinity"
-              width={42}
-              height={42}
-              style={{ width: "auto", height: "auto" }}
-            />
+          <div className="grid grid-cols-3 gap-8 items-center justify-items-center mb-4 w-full">
+            <div className="flex justify-center">
+              <Image
+                src="/figma.svg"
+                alt="Figma"
+                width={48}
+                height={48}
+                style={{ width: "48px", height: "48px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/photoshop.svg"
+                alt="Photoshop"
+                width={48}
+                height={48}
+                style={{ width: "48px", height: "48px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/canva.svg"
+                alt="Canva"
+                width={48}
+                height={48}
+                style={{ width: "48px", height: "48px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/afinity.svg"
+                alt="Affinity"
+                width={48}
+                height={48}
+                style={{ width: "48px", height: "48px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/jttr.svg"
+                alt="Jitter"
+                width={48}
+                height={48}
+                style={{ width: "48px", height: "48px" }}
+              />
+            </div>
           </div>
         </Card>
         {/* FRONT-END */}
