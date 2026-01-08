@@ -57,45 +57,45 @@ export default function Skills() {
               <Image
                 src="/figma.svg"
                 alt="Figma"
-                width={48}
-                height={48}
-                style={{ width: "48px", height: "48px" }}
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
               />
             </div>
             <div className="flex justify-center">
               <Image
                 src="/photoshop.svg"
                 alt="Photoshop"
-                width={48}
-                height={48}
-                style={{ width: "48px", height: "48px" }}
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
               />
             </div>
             <div className="flex justify-center">
               <Image
                 src="/canva.svg"
                 alt="Canva"
-                width={48}
-                height={48}
-                style={{ width: "48px", height: "48px" }}
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
               />
             </div>
             <div className="flex justify-center">
               <Image
                 src="/afinity.svg"
                 alt="Affinity"
-                width={48}
-                height={48}
-                style={{ width: "48px", height: "48px" }}
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
               />
             </div>
             <div className="flex justify-center">
               <Image
                 src="/jttr.svg"
                 alt="Jitter"
-                width={48}
-                height={48}
-                style={{ width: "48px", height: "48px" }}
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
               />
             </div>
           </div>
@@ -110,56 +110,70 @@ export default function Skills() {
           <h3 className="text-xl font-bold text-primary mb-2 text-center">
             WEB DEVELOPMENT
           </h3>
-          <div className="flex flex-wrap gap-4 items-center justify-center mb-4">
-            <Image
-              src="/html-5.svg"
-              alt="HTML5"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/css-3.svg"
-              alt="CSS3"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/javascript.svg"
-              alt="JavaScript"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/typescript.svg"
-              alt="TypeScript"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/tailwindcss.svg"
-              alt="TailwindCSS"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/react.svg"
-              alt="React"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/nextjs.svg"
-              alt="Next.js"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
+          <div className="grid grid-cols-3 gap-8 items-center justify-items-center mb-4 w-full">
+            <div className="flex justify-center">
+              <Image
+                src="/html-5.svg"
+                alt="HTML5"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/css-3.svg"
+                alt="CSS3"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/javascript.svg"
+                alt="JavaScript"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/typescript.svg"
+                alt="TypeScript"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/tailwindcss.svg"
+                alt="TailwindCSS"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/react.svg"
+                alt="React"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/nextjs.svg"
+                alt="Next.js"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
           </div>
         </Card>
         {/* BLOCKCHAIN */}
@@ -172,21 +186,25 @@ export default function Skills() {
           <h3 className="text-xl font-bold text-primary mb-2 text-center">
             BLOCKCHAIN
           </h3>
-          <div className="flex gap-4 items-center mb-4">
-            <Image
-              src="/clarity.svg"
-              alt="Clarity"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
-            <Image
-              src="/stacks.svg"
-              alt="Stacks"
-              width={32}
-              height={32}
-              style={{ width: "auto", height: "auto" }}
-            />
+          <div className="grid grid-cols-3 gap-8 items-center justify-items-center mb-4 w-full">
+            <div className="flex justify-center">
+              <Image
+                src="/clarity.svg"
+                alt="Clarity"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/stacks.svg"
+                alt="Stacks"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
           </div>
         </Card>
       </div>
