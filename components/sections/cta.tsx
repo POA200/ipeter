@@ -37,7 +37,11 @@ export default function BottomCTA() {
           dApp interface, let's build something impactful together
         </p>
         <Button asChild size="lg" className="rounded-full px-6">
-          <a href="#contact">
+          <a
+            href="https://t.me/iPetercrx"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Get in Touch <ArrowRight className="ml-2 size-4" />
           </a>
         </Button>
