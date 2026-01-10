@@ -10,19 +10,37 @@ export const uiuxProjects = [
     title: "Aquacoin UI Design",
     description: "Aquacoin UI/UX design project.",
     github: "#",
-    banner: "/UI/AquacoinUI-banner.png",
+    banner: "/UI/AquacoinUI-banner.webp",
   },
   {
     title: "Blocklift UI Design",
     description: "Blocklift UI/UX design project.",
     github: "#",
-    banner: "/UI/BlockliftUI-banner.png",
+    banner: "/UI/BlockliftUI-banner.webp",
   },
   {
     title: "Bubblr UI Design",
     description: "Bubblr UI/UX design project.",
     github: "#",
-    banner: "/UI/Bubblr-banner.png",
+    banner: "/UI/Bubblr-banner.webp",
+  },
+  {
+    title: "HNG LEARN UI Design",
+    description: "HNG LEARN UI/UX design project.",
+    github: "#",
+    banner: "/UI/HNG-LEARN-UI-banner.webp",
+  },
+  {
+    title: "iPeter UI Design",
+    description: "iPeter UI/UX design project.",
+    github: "#",
+    banner: "/UI/IPETER-UI-banner.webp",
+  },
+  {
+    title: "POAP UI Design",
+    description: "POAP UI/UX design project.",
+    github: "#",
+    banner: "/UI/POAP-UI.webp",
   },
 ];
 
@@ -102,11 +120,11 @@ export function UiUxProjects() {
             className="mt-auto w-full flex items-center gap-auto "
           >
             <a
-              href="https://www.behance.net/peteroluwaseyi1"
+              href="https://x.com/iPeter_crx"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View <ArrowRight className="size-4" />
+              Enquire <ArrowRight className="size-4" />
             </a>
           </Button>
         </Card>

@@ -6,13 +6,13 @@ import { GraphicDesignProjects } from "./graphic-design-projects";
 import { UiUxProjects } from "./uiux-projects";
 
 const FILTERS = [
+  { label: "UI UX Design", value: "uiux" },
   { label: "Web Development", value: "web" },
   { label: "Visual & Graphic Design", value: "graphic" },
-  { label: "UI UX Design", value: "uiux" },
 ];
 
 export default function ProjectGrid() {
-  const [filter, setFilter] = useState("web");
+  const [filter, setFilter] = useState("uiux");
 
   return (
     <section id="projects" className="w-full py-12 md:py-24 px-4 md:px-24">
