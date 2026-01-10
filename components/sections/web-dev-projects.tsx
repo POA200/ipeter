@@ -17,6 +17,7 @@ export const webDevProjects = [
       "Led the end-to-end UI/UX design using accessible information architecture to simplify technical concepts.",
     tech: "Built a high-performance frontend using React.js and Tailwind CSS, optimizing asset delivery for fast loading.",
     github: "https://github.com/POA200/blocklift",
+    live: "https://blocklift.org",
     banner: "/Blocklift-preview.webp",
   },
   {
@@ -30,6 +31,7 @@ export const webDevProjects = [
       "Developed a flexible, intuitive user interface to manage asset layering and metadata generation.",
     tech: "Integrated Clarity smart contract interactions to streamline the entire on-chain asset creation flow.",
     github: "https://github.com/POA200/genstacks",
+    live: "https://genstacks.fun",
     banner: "/Genstacks-preview.webp",
   },
   {
@@ -43,6 +45,7 @@ export const webDevProjects = [
       "Designed and implemented a core landing page and learning system that clearly communicates the mission, and teaches new members about web3.",
     tech: "Prioritized brand consistency and accessibility to build user trust and encourage community participation.",
     github: "https://github.com/POA200/oakdao",
+    live: "https://oakdao.pro",
     banner: "/Oakdao-preview.webp",
   },
   {
@@ -56,6 +59,7 @@ export const webDevProjects = [
       "Designed compelling data visualizations for transaction metrics badge rewards to boost user confidence.",
     tech: "Utilized Stacks.js and integrated the Stacks Wallet API to securely retrieve and display personalized on-chain data.",
     github: "https://github.com/POA200/stackswrapped",
+    live: "https://stackswrapped.fun",
     banner: "/Stackswrapped-preview.webp",
   },
 ];
@@ -142,16 +146,32 @@ export function WebDevProjects() {
           <div className="text-xs mb-2">
             <b>The Tech:</b> {project.tech}
           </div>
-          <Button
-            asChild
-            variant="default"
-            size={"lg"}
-            className="mt-auto w-full flex items-center gap-auto "
-          >
-            <a href={project.github} target="_blank" rel="noopener noreferrer">
-              View Project <ArrowRight className="size-4" />
-            </a>
-          </Button>
+          <div className="flex gap-2 mt-auto w-full">
+            <Button
+              asChild
+              variant="outline"
+              size={"lg"}
+              className="flex-1 flex items-center gap-2"
+            >
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub <ArrowRight className="size-4" />
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="default"
+              size={"lg"}
+              className="flex-1 flex items-center gap-2"
+            >
+              <a href={project.live} target="_blank" rel="noopener noreferrer">
+                Live Link <ArrowRight className="size-4" />
+              </a>
+            </Button>
+          </div>
         </Card>
       ))}
     </div>
