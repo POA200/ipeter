@@ -7,28 +7,22 @@ import { Card } from "../ui/card";
 // Placeholder data for UI UX Design projects
 export const uiuxProjects = [
   {
-    title: "Aquacoin UI Design",
-    description: "Aquacoin UI/UX design project.",
-    github: "#",
-    banner: "/UI/AquacoinUI-banner.webp",
-  },
-  {
     title: "Blocklift UI Design",
     description: "Blocklift UI/UX design project.",
     github: "#",
     banner: "/UI/BlockliftUI-banner.webp",
   },
   {
-    title: "Bubblr UI Design",
-    description: "Bubblr UI/UX design project.",
+    title: "POAP UI Design",
+    description: "POAP UI/UX design project.",
     github: "#",
-    banner: "/UI/Bubblr-banner.webp",
+    banner: "/UI/POAP-UI.webp",
   },
   {
-    title: "HNG LEARN UI Design",
-    description: "HNG LEARN UI/UX design project.",
+    title: "Stackswrapped UI Design",
+    description: "Stackswrapped UI/UX design project.",
     github: "#",
-    banner: "/UI/HNG-LEARN-UI-banner.webp",
+    banner: "/UI/stackswrapped-UI-banner.webp",
   },
   {
     title: "iPeter UI Design",
@@ -37,10 +31,22 @@ export const uiuxProjects = [
     banner: "/UI/IPETER-UI-banner.webp",
   },
   {
-    title: "POAP UI Design",
-    description: "POAP UI/UX design project.",
+    title: "HNG LEARN UI Design",
+    description: "HNG LEARN UI/UX design project.",
     github: "#",
-    banner: "/UI/POAP-UI.webp",
+    banner: "/UI/HNG-LEARN-UI-banner.webp",
+  },
+  {
+    title: "Aquacoin UI Design",
+    description: "Aquacoin UI/UX design project.",
+    github: "#",
+    banner: "/UI/AquacoinUI-banner.webp",
+  },
+  {
+    title: "Bubblr UI Design",
+    description: "Bubblr UI/UX design project.",
+    github: "#",
+    banner: "/UI/Bubblr-banner.webp",
   },
 ];
 
@@ -48,31 +54,30 @@ export function UiUxProjects() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    if (!cardRefs.current) return;
+    if (!cardRefs.current.length) return;
     const observers: IntersectionObserver[] = [];
     cardRefs.current.forEach((ref, i) => {
       if (!ref) return;
       const observer = new window.IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add(
-              i % 2 === 0 ? "slide-in-left" : "slide-in-right"
-            );
             entry.target.classList.remove(
               "slide-out-left",
               "slide-out-right",
-              "opacity-0",
-              "-translate-x-12",
-              "translate-x-12"
+              "opacity-0"
+            );
+            entry.target.classList.add(
+              i % 2 === 0 ? "slide-in-left" : "slide-in-right"
             );
           } else {
             entry.target.classList.remove("slide-in-left", "slide-in-right");
             entry.target.classList.add(
+              "opacity-0",
               i % 2 === 0 ? "slide-out-left" : "slide-out-right"
             );
           }
         },
-        { threshold: 0.2 }
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
       );
       observer.observe(ref);
       observers.push(observer);
@@ -88,10 +93,7 @@ export function UiUxProjects() {
           ref={(el) => {
             cardRefs.current[idx] = el;
           }}
-          className={`w-full bg-primary/5 border border-primary/30 rounded-xl p-4 flex flex-col gap-3 opacity-0 ${
-            idx % 2 === 0 ? "-translate-x-12" : "translate-x-12"
-          } transition-all duration-1000`}
-          style={{ transitionDelay: `${idx * 200}ms` }}
+          className={`w-full bg-primary/5 border border-primary/30 rounded-xl p-4 flex flex-col gap-3 opacity-0`}
         >
           {/* Banner Image */}
           <div className="w-full aspect-[5/3] bg-primary/10 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
