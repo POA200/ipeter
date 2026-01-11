@@ -52,7 +52,7 @@ export default function Skills() {
           <h3 className="text-xl font-bold text-primary mb-2 text-center">
             UI UX & DESIGN
           </h3>
-          <div className="grid grid-cols-3 gap-8 items-center justify-items-center mb-4 w-full">
+          <div className="grid grid-cols-3 gap-4 items-center justify-items-center mb-4 w-full">
             <div className="flex justify-center">
               <Image
                 src="/figma.svg"
@@ -98,6 +98,15 @@ export default function Skills() {
                 style={{ width: "24px", height: "24px" }}
               />
             </div>
+            <div className="flex justify-center">
+              <Image
+                src="/spline.png"
+                alt="Spline"
+                width={24}
+                height={24}
+                style={{ width: "24px", height: "24px" }}
+              />
+            </div>
           </div>
         </Card>
         {/* FRONT-END */}
@@ -110,7 +119,7 @@ export default function Skills() {
           <h3 className="text-xl font-bold text-primary mb-2 text-center">
             WEB DEVELOPMENT
           </h3>
-          <div className="grid grid-cols-3 gap-8 items-center justify-items-center mb-4 w-full">
+          <div className="grid grid-cols-3 gap-4 items-center justify-items-center mb-4 w-full">
             <div className="flex justify-center">
               <Image
                 src="/html-5.svg"
@@ -186,7 +195,7 @@ export default function Skills() {
           <h3 className="text-xl font-bold text-primary mb-2 text-center">
             BLOCKCHAIN
           </h3>
-          <div className="grid grid-cols-3 gap-8 items-center justify-items-center mb-4 w-full">
+          <div className="grid grid-cols-3 gap-4 items-center justify-items-center mb-4 w-full">
             <div className="flex justify-center">
               <Image
                 src="/clarity.svg"
