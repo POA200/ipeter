@@ -69,23 +69,23 @@ export function GraphicDesignProjects() {
         ([entry]) => {
           if (entry.isIntersecting) {
             entry.target.classList.add(
-              i % 2 === 0 ? "slide-in-left" : "slide-in-right"
+              i % 2 === 0 ? "slide-in-left" : "slide-in-right",
             );
             entry.target.classList.remove(
               "slide-out-left",
               "slide-out-right",
               "opacity-0",
               "-translate-x-12",
-              "translate-x-12"
+              "translate-x-12",
             );
           } else {
             entry.target.classList.remove("slide-in-left", "slide-in-right");
             entry.target.classList.add(
-              i % 2 === 0 ? "slide-out-left" : "slide-out-right"
+              i % 2 === 0 ? "slide-out-left" : "slide-out-right",
             );
           }
         },
-        { threshold: 0.2 }
+        { threshold: 0.2 },
       );
       observer.observe(ref);
       observers.push(observer);
@@ -143,6 +143,22 @@ export function GraphicDesignProjects() {
           </Button>
         </Card>
       ))}
+    </div>
+  );
+}
+
+export function ViewAllGraphicsButton() {
+  return (
+    <div className="mt-12 text-center">
+      <Button
+        asChild
+        size="lg"
+        className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-all"
+      >
+        <a href="/projects/graphics">
+          View All Graphics Projects <ArrowRight className="ml-2 size-4" />
+        </a>
+      </Button>
     </div>
   );
 }

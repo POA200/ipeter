@@ -76,22 +76,22 @@ export function WebDevProjects() {
         ([entry]) => {
           if (entry.isIntersecting) {
             entry.target.classList.add(
-              i % 2 === 0 ? "slide-in-left" : "slide-in-right"
+              i % 2 === 0 ? "slide-in-left" : "slide-in-right",
             );
             entry.target.classList.remove(
               "opacity-0",
               "-translate-x-12",
-              "translate-x-12"
+              "translate-x-12",
             );
           } else {
             entry.target.classList.remove("slide-in-left", "slide-in-right");
             entry.target.classList.add(
               "opacity-0",
-              i % 2 === 0 ? "-translate-x-12" : "translate-x-12"
+              i % 2 === 0 ? "-translate-x-12" : "translate-x-12",
             );
           }
         },
-        { threshold: 0.2 }
+        { threshold: 0.2 },
       );
       observer.observe(ref);
       observers.push(observer);
@@ -174,6 +174,22 @@ export function WebDevProjects() {
           </div>
         </Card>
       ))}
+    </div>
+  );
+}
+
+export function ViewAllWebDevButton() {
+  return (
+    <div className="mt-12 text-center">
+      <Button
+        asChild
+        size="lg"
+        className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-all"
+      >
+        <a href="/projects/web-dev">
+          View All Web Dev Projects <ArrowRight className="ml-2 size-4" />
+        </a>
+      </Button>
     </div>
   );
 }

@@ -1,9 +1,12 @@
 "use client";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { WebDevProjects } from "./web-dev-projects";
-import { GraphicDesignProjects } from "./graphic-design-projects";
-import { UiUxProjects } from "./uiux-projects";
+import { WebDevProjects, ViewAllWebDevButton } from "./web-dev-projects";
+import {
+  GraphicDesignProjects,
+  ViewAllGraphicsButton,
+} from "./graphic-design-projects";
+import { UiUxProjects, ViewAllUiUxButton } from "./uiux-projects";
 
 const FILTERS = [
   { label: "UI UX Design", value: "uiux" },
@@ -28,9 +31,24 @@ export default function ProjectGrid() {
           </Button>
         ))}
       </div>
-      {filter === "web" && <WebDevProjects />}
-      {filter === "graphic" && <GraphicDesignProjects />}
-      {filter === "uiux" && <UiUxProjects />}
+      {filter === "web" && (
+        <>
+          <WebDevProjects />
+          <ViewAllWebDevButton />
+        </>
+      )}
+      {filter === "graphic" && (
+        <>
+          <GraphicDesignProjects />
+          <ViewAllGraphicsButton />
+        </>
+      )}
+      {filter === "uiux" && (
+        <>
+          <UiUxProjects />
+          <ViewAllUiUxButton />
+        </>
+      )}
     </section>
   );
 }
