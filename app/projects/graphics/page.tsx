@@ -1,15 +1,54 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 // All graphics images from visuals page directory
 const GRAPHICS_IMAGES = [
+  "OakxVelar.png",
+  "OakxZest2.png",
+  "PAYG.png",
+  "Predict and win M3.png",
+  "Remote.png",
+  "SW 2h GA top10.png",
+  "SW Bounty Ann.png",
+  "SW LS Ann.png",
+  "SW MN LIVE.png",
+  "SW MN launch.png",
+  "SW Moodboard.png",
+  "SW THREAD HEADER A.png",
+  "SW THREAD HEADER B.png",
+  "SW THREAD INTRO.png",
+  "SW THREAD LEXI.png",
+  "SW ZAD Badge.png",
+  "SW available on Xverse.png",
+  "Smoke header v2-2.png",
+  "Spooky Stacks.png",
+  "Stacks Mode.png",
+  "Stackswars-brand-design.webp",
+  "StellarOrg-Hiki (1).png",
+  "StellarOrg-Hiki (2).png",
+  "StellarOrg-Hiki (3).png",
+  "StellarOrg-Hiki (4).png",
+  "StellarOrg-Hiki (5).png",
+  "StellarOrg-Hiki (6).png",
+  "StellarOrg-Hiki.png",
+  "Testing is live.png",
+  "UAPxOAK.png",
   "1K FOLLOWERS-WALEX.png",
   "2HAZYSW.png",
   "2HAZYSW2.png",
@@ -210,37 +249,6 @@ const GRAPHICS_IMAGES = [
   "OakxFLLAT2.png",
   "OakxStSTXx.png",
   "OakxStSTXxzx.png",
-  "OakxVelar.png",
-  "OakxZest2.png",
-  "PAPU#DEMO.png",
-  "PAYG.png",
-  "Predict and win M3.png",
-  "Remote.png",
-  "SW 2h GA top10.png",
-  "SW Bounty Ann.png",
-  "SW LS Ann.png",
-  "SW MN LIVE.png",
-  "SW MN launch.png",
-  "SW Moodboard.png",
-  "SW THREAD HEADER A.png",
-  "SW THREAD HEADER B.png",
-  "SW THREAD INTRO.png",
-  "SW THREAD LEXI.png",
-  "SW ZAD Badge.png",
-  "SW available on Xverse.png",
-  "Smoke header v2-2.png",
-  "Spooky Stacks.png",
-  "Stacks Mode.png",
-  "Stackswars-brand-design.webp",
-  "StellarOrg-Hiki (1).png",
-  "StellarOrg-Hiki (2).png",
-  "StellarOrg-Hiki (3).png",
-  "StellarOrg-Hiki (4).png",
-  "StellarOrg-Hiki (5).png",
-  "StellarOrg-Hiki (6).png",
-  "StellarOrg-Hiki.png",
-  "Testing is live.png",
-  "UAPxOAK.png",
   "Walex-Bittensor (1).png",
   "Walex-Bittensor (2).png",
   "Walex-Bittensor (3).png",
@@ -348,39 +356,84 @@ const GRAPHICS_IMAGES = [
   "weekly referral leaderboard.png",
 ];
 
+const ITEMS_PER_PAGE = 40;
+
 export default function GraphicsPage() {
-  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
-  const [loadedImages, setLoadedImages] = useState(new Set<string>());
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isPageLoading, setIsPageLoading] = useState(true);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const totalPages = Math.max(
+    1,
+    Math.ceil(GRAPHICS_IMAGES.length / ITEMS_PER_PAGE),
+  );
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = Math.min(
+    startIndex + ITEMS_PER_PAGE,
+    GRAPHICS_IMAGES.length,
+  );
+  const pagedImages = useMemo(
+    () => GRAPHICS_IMAGES.slice(startIndex, endIndex),
+    [startIndex, endIndex],
+  );
+
+  const paginationItems = useMemo(() => {
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, index) => index + 1);
+    }
+
+    const items: Array<number | "ellipsis"> = [];
+    const left = Math.max(2, currentPage - 1);
+    const right = Math.min(totalPages - 1, currentPage + 1);
+
+    items.push(1);
+    if (left > 2) items.push("ellipsis");
+    for (let page = left; page <= right; page += 1) {
+      items.push(page);
+    }
+    if (right < totalPages - 1) items.push("ellipsis");
+    items.push(totalPages);
+
+    return items;
+  }, [currentPage, totalPages]);
 
   useEffect(() => {
-    // Preload all images
+    let isActive = true;
     let loadedCount = 0;
-    const totalImages = GRAPHICS_IMAGES.length;
+    const totalImages = pagedImages.length;
 
-    const imagePromises = GRAPHICS_IMAGES.map((imageName) => {
-      return new Promise((resolve, reject) => {
-        const img = new window.Image();
-        img.src = `/visuals page/${imageName}`;
-        img.onload = () => {
-          loadedCount++;
-          setLoadedImages((prev) => new Set(prev).add(imageName));
-          if (loadedCount === totalImages) {
-            setAllImagesLoaded(true);
-          }
-          resolve(imageName);
-        };
-        img.onerror = () => {
-          loadedCount++;
-          if (loadedCount === totalImages) {
-            setAllImagesLoaded(true);
-          }
-          reject(imageName);
-        };
-      });
+    setIsPageLoading(true);
+
+    if (totalImages === 0) {
+      setIsPageLoading(false);
+      return undefined;
+    }
+
+    pagedImages.forEach((imageName) => {
+      const img = new window.Image();
+      img.src = `/visuals page/${imageName}`;
+      img.onload = () => {
+        loadedCount += 1;
+        if (isActive && loadedCount === totalImages) {
+          setIsPageLoading(false);
+        }
+      };
+      img.onerror = () => {
+        loadedCount += 1;
+        if (isActive && loadedCount === totalImages) {
+          setIsPageLoading(false);
+        }
+      };
     });
 
-    Promise.allSettled(imagePromises);
-  }, []);
+    return () => {
+      isActive = false;
+    };
+  }, [pagedImages]);
 
   return (
     <main className="w-full min-h-screen bg-white dark:bg-black">
@@ -411,23 +464,30 @@ export default function GraphicsPage() {
       {/* Grid Section */}
       <section className="w-full px-3 md:px-8 lg:px-12 pb-12 md:pb-20">
         <div className="max-w-[1800px] mx-auto">
-          {!allImagesLoaded && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-              {GRAPHICS_IMAGES.map((_, index) => (
-                <Skeleton
-                  key={`skeleton-${index}`}
-                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-lg"
-                />
-              ))}
+          {isPageLoading && (
+            <div className="space-y-4">
+              <div className="text-center text-sm md:text-base text-muted-foreground">
+                Loading visuals for page {currentPage}… please wait.
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+                {Array.from({
+                  length: Math.max(1, pagedImages.length),
+                }).map((_, index) => (
+                  <Skeleton
+                    key={`skeleton-${index}`}
+                    className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-lg"
+                  />
+                ))}
+              </div>
             </div>
           )}
 
           <div
             className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 transition-opacity duration-500 ${
-              allImagesLoaded ? "opacity-100" : "opacity-0 hidden"
+              isPageLoading ? "opacity-0 hidden" : "opacity-100"
             }`}
           >
-            {GRAPHICS_IMAGES.map((imageName, index) => (
+            {pagedImages.map((imageName, index) => (
               <div
                 key={`${imageName}-${index}`}
                 className="group relative w-full overflow-hidden rounded-lg hover:scale-[1.02] transition-transform duration-300"
@@ -448,6 +508,66 @@ export default function GraphicsPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <p className="text-xs sm:text-sm text-muted-foreground">
+              Showing {startIndex + 1}–{endIndex} of {GRAPHICS_IMAGES.length}
+            </p>
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious
+                    href="#"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      handlePageChange(Math.max(1, currentPage - 1));
+                    }}
+                    className={
+                      currentPage === 1 ? "pointer-events-none opacity-50" : ""
+                    }
+                    aria-disabled={currentPage === 1}
+                  />
+                </PaginationItem>
+
+                {paginationItems.map((item, index) =>
+                  item === "ellipsis" ? (
+                    <PaginationItem key={`ellipsis-${index}`}>
+                      <PaginationEllipsis />
+                    </PaginationItem>
+                  ) : (
+                    <PaginationItem key={`page-${item}`}>
+                      <PaginationLink
+                        href="#"
+                        isActive={item === currentPage}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          handlePageChange(item);
+                        }}
+                      >
+                        {item}
+                      </PaginationLink>
+                    </PaginationItem>
+                  ),
+                )}
+
+                <PaginationItem>
+                  <PaginationNext
+                    href="#"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      handlePageChange(Math.min(totalPages, currentPage + 1));
+                    }}
+                    className={
+                      currentPage === totalPages
+                        ? "pointer-events-none opacity-50"
+                        : ""
+                    }
+                    aria-disabled={currentPage === totalPages}
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
           </div>
         </div>
       </section>
