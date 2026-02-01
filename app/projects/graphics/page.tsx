@@ -556,7 +556,7 @@ function DesignTabContent({
           <div className="text-center text-sm md:text-base text-muted-foreground">
             Loading designs… please wait.
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
             {Array.from({ length: Math.max(1, pagedImages.length) }).map(
               (_, index) => (
                 <Skeleton
@@ -570,7 +570,7 @@ function DesignTabContent({
       )}
 
       <div
-        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6 transition-opacity duration-500 ${
+        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-4 lg:gap-6 transition-opacity duration-500 ${
           isLoading ? "opacity-0 hidden" : "opacity-100"
         }`}
       >
