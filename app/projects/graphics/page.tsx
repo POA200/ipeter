@@ -16,40 +16,58 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// All graphics images from visuals page directory
-const GRAPHICS_IMAGES = [
-  "OakxVelar.png",
-  "OakxZest2.png",
-  "PAYG.png",
-  "Predict and win M3.png",
-  "Remote.png",
-  "SW 2h GA top10.png",
-  "SW Bounty Ann.png",
-  "SW LS Ann.png",
-  "SW MN LIVE.png",
-  "SW MN launch.png",
-  "SW Moodboard.png",
+// Brand Design Collections
+const BRANDING_DESIGNS = [
+  "Aquacoin-design.webp",
+  "BitstacksBrand-design.webp",
+  "STXAI-Brand-design.webp",
+  "Stackswars-brand-design.webp",
+  "Hero Header.png",
+];
+
+// X Headers & Headers
+const X_HEADERS = [
+  "IPeter x header.png",
+  "Julius-XHeader.png",
+  "Lio rush x header2.png",
+  "Nothing Header (2).png",
+  "Smoke header v2-2.png",
+  "Flat header - 5.png",
+];
+
+// Social Media Posters & Flyers
+const SOCIAL_POSTERS = [
+  "Socials-poster-design.webp",
+  "AQUACOINHiring.png",
+  "Banner Announcement.png",
+  "Blocklift Ann.png",
+  "Giveaway Announcement.png",
+  "Logo Announcement.png",
+  "Testing is live.png",
+  "Welcome to Aquacoinx.png",
+  "1K FOLLOWERS-WALEX.png",
+  "Blocklift x Flat.png",
+  "Blocklift x Flat2.png",
+  "CloutCoin X post 2.png",
+  "CloutCoin X post 3.png",
+  "CloutCoin post.png",
+  "HIKI-1k.png",
+  "lio rush x disc.webp",
+];
+
+// Thread Headers & Designs
+const THREAD_DESIGNS = [
+  "Thread-designs.webp",
   "SW THREAD HEADER A.png",
   "SW THREAD HEADER B.png",
   "SW THREAD INTRO.png",
   "SW THREAD LEXI.png",
-  "SW ZAD Badge.png",
-  "SW available on Xverse.png",
-  "Smoke header v2-2.png",
-  "Spooky Stacks.png",
-  "Stacks Mode.png",
-  "Stackswars-brand-design.webp",
-  "StellarOrg-Hiki (1).png",
-  "StellarOrg-Hiki (2).png",
-  "StellarOrg-Hiki (3).png",
-  "StellarOrg-Hiki (4).png",
-  "StellarOrg-Hiki (5).png",
-  "StellarOrg-Hiki (6).png",
-  "StellarOrg-Hiki.png",
-  "Testing is live.png",
-  "UAPxOAK.png",
-  "1K FOLLOWERS-WALEX.png",
+];
+
+// Campaign & Announcement Graphics
+const CAMPAIGN_GRAPHICS = [
   "2HAZYSW.png",
   "2HAZYSW2.png",
   "2HAZYSW3.png",
@@ -58,8 +76,6 @@ const GRAPHICS_IMAGES = [
   "2HAZYSW6.png",
   "2HAZYSW7.png",
   "A Christmas special Stacks Africa space.png",
-  "AQUACOINHiring.png",
-  "AQUACOINXHNM.png",
   "AVAX.png",
   "AVAX2.png",
   "AVAX3.png",
@@ -69,10 +85,6 @@ const GRAPHICS_IMAGES = [
   "BITSTACKS (1).png",
   "BITSTACKS HEADER (9).png",
   "BITSTACKS LOGO (2).png",
-  "Banner Announcement.png",
-  "Blocklift Ann.png",
-  "Blocklift x Flat.png",
-  "Blocklift x Flat2.png",
   "BrevisxWalex - Copy.png",
   "BrevisxWalex.png",
   "BrevisxWalex1.png",
@@ -80,9 +92,10 @@ const GRAPHICS_IMAGES = [
   "BrevisxWalex3.png",
   "BrevisxWalex4.png",
   "BrevisxWalex5.png",
-  "CloutCoin X post 2.png",
-  "CloutCoin X post 3.png",
-  "CloutCoin post.png",
+];
+
+// Educational & Technical Graphics
+const EDUCATIONAL_GRAPHICS = [
   "EnyiGranite.png",
   "EnyiGraniteEND.png",
   "EnyiGraniteHOW.png",
@@ -113,11 +126,12 @@ const GRAPHICS_IMAGES = [
   "Enyixinfofinear.png",
   "Enyixinfofiren.png",
   "Enyixinfofisen.png",
+];
+
+// Product & Collaboration Graphics
+const PRODUCT_GRAPHICS = [
   "Facktory fun mascot 2.png",
-  "Flat header - 5.png",
   "Freshie2.png",
-  "Giveaway Announcement.png",
-  "HIKI-1k.png",
   "HIKIxXSY.png",
   "HIKIxXSYend.png",
   "HIKIxXSYpoints.png",
@@ -127,7 +141,6 @@ const GRAPHICS_IMAGES = [
   "HazySW.png",
   "HazySW2.png",
   "HazySW3.png",
-  "Hero Header.png",
   "HikXXi.png",
   "Hiki X Benqi.png",
   "HikiCAV.png",
@@ -153,6 +166,10 @@ const GRAPHICS_IMAGES = [
   "HikiX4UAI (7).png",
   "HikiX4UAI (8).png",
   "HikiX4UAI (9).png",
+];
+
+// Ecosystem & Partnership Graphics
+const ECOSYSTEM_GRAPHICS = [
   "HikiXAvax (1).png",
   "HikiXAvax (2).png",
   "HikiXAvax (3).png",
@@ -181,6 +198,10 @@ const GRAPHICS_IMAGES = [
   "HikixavagreeSAFE.png",
   "HikixavagreeSpruce.png",
   "HikixavagreeWHY.png",
+];
+
+// Community & Event Graphics
+const COMMUNITY_GRAPHICS = [
   "Hikixavaxart.png",
   "Hikixavaxcul.png",
   "Hikixavaxdefi.png",
@@ -200,6 +221,12 @@ const GRAPHICS_IMAGES = [
   "HikkiGAM.png",
   "HikkiSEAM.png",
   "HikkiSUB.png",
+  "OakxVelar.png",
+  "OakxZest2.png",
+];
+
+// Miscellaneous & Premium Graphics
+const MISC_GRAPHICS = [
   "ID_Crypto2.png",
   "IDxLEO.png",
   "IDxLEOend.png",
@@ -214,7 +241,6 @@ const GRAPHICS_IMAGES = [
   "IDxSW3.png",
   "IDxSW4.png",
   "IDxSW5.png",
-  "IPeter x header.png",
   "Javelinai end.png",
   "Javelinai help.png",
   "Javelinai intro.png",
@@ -223,19 +249,15 @@ const GRAPHICS_IMAGES = [
   "Javelinai summ.png",
   "Javelinai why.png",
   "Javelinai.png",
-  "Julius-XHeader.png",
   "LIQ.png",
   "Lexi Wars1.png",
   "Lexi Wars2.png",
   "Lexi Wars3.png",
-  "Lio rush x header2.png",
-  "Logo Announcement.png",
   "MAR.png",
   "MILE.png",
   "Modalayo.png",
   "Mr smack stickerpack.png",
   "NODE.png",
-  "Nothing Header (2).png",
   "Oak (2).png",
   "Oak (3).png",
   "Oak X Banner2@3x.png",
@@ -249,6 +271,28 @@ const GRAPHICS_IMAGES = [
   "OakxFLLAT2.png",
   "OakxStSTXx.png",
   "OakxStSTXxzx.png",
+  "PAYG.png",
+  "Predict and win M3.png",
+  "Remote.png",
+  "SW 2h GA top10.png",
+  "SW Bounty Ann.png",
+  "SW LS Ann.png",
+  "SW MN LIVE.png",
+  "SW MN launch.png",
+  "SW Moodboard.png",
+  "SW ZAD Badge.png",
+  "SW available on Xverse.png",
+  "StellarOrg-Hiki (1).png",
+  "StellarOrg-Hiki (2).png",
+  "StellarOrg-Hiki (3).png",
+  "StellarOrg-Hiki (4).png",
+  "StellarOrg-Hiki (5).png",
+  "StellarOrg-Hiki (6).png",
+  "StellarOrg-Hiki.png",
+  "Spooky Stacks.png",
+  "Stacks Mode.png",
+  "Testing is live.png",
+  "UAPxOAK.png",
   "Walex-Bittensor (1).png",
   "Walex-Bittensor (2).png",
   "Walex-Bittensor (3).png",
@@ -259,7 +303,6 @@ const GRAPHICS_IMAGES = [
   "Walex-Bittensor (8).png",
   "Walex-Bittensor (9).png",
   "Walex-Bittensor.png",
-  "Welcome to Aquacoinx.png",
   "Why AVAX with Hikmah.png",
   "Why Avax with Hikmah PS Dexalot.png",
   "Why Avax with Hikmah1.png",
@@ -284,7 +327,6 @@ const GRAPHICS_IMAGES = [
   "ipeterbtcpizza0.png",
   "ipeterstx.png",
   "leo.png",
-  "lio rush x disc.webp",
   "oak (5).png",
   "oak flaa.png",
   "oak herma 1.png",
@@ -356,29 +398,89 @@ const GRAPHICS_IMAGES = [
   "weekly referral leaderboard.png",
 ];
 
-const ITEMS_PER_PAGE = 40;
+// Tab categories with their corresponding image arrays
+const DESIGN_TABS = [
+  {
+    id: "branding",
+    label: "Branding",
+    description: "Brand identities and logo designs",
+    images: BRANDING_DESIGNS,
+  },
+  {
+    id: "x-headers",
+    label: "X Headers",
+    description: "Twitter/X header banners and designs",
+    images: X_HEADERS,
+  },
+  {
+    id: "social-posters",
+    label: "Social Media",
+    description: "Social media posters and promotional flyers",
+    images: SOCIAL_POSTERS,
+  },
+  {
+    id: "threads",
+    label: "Threads",
+    description: "Twitter thread headers and layouts",
+    images: THREAD_DESIGNS,
+  },
+  {
+    id: "campaigns",
+    label: "Campaigns",
+    description: "Campaign announcements and graphics",
+    images: CAMPAIGN_GRAPHICS,
+  },
+  {
+    id: "educational",
+    label: "Educational",
+    description: "Educational and technical visuals",
+    images: EDUCATIONAL_GRAPHICS,
+  },
+  {
+    id: "products",
+    label: "Products",
+    description: "Product and collaboration graphics",
+    images: PRODUCT_GRAPHICS,
+  },
+  {
+    id: "ecosystem",
+    label: "Ecosystem",
+    description: "Ecosystem and partnership designs",
+    images: ECOSYSTEM_GRAPHICS,
+  },
+  {
+    id: "community",
+    label: "Community",
+    description: "Community and event graphics",
+    images: COMMUNITY_GRAPHICS,
+  },
+  {
+    id: "miscellaneous",
+    label: "All Designs",
+    description: "Additional and premium graphics",
+    images: MISC_GRAPHICS,
+  },
+];
 
-export default function GraphicsPage() {
+const ITEMS_PER_PAGE = 20;
+
+// Component for rendering a design tab with pagination
+function DesignTabContent({
+  images,
+  tabId,
+}: {
+  images: string[];
+  tabId: string;
+}) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [isPageLoading, setIsPageLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const totalPages = Math.max(
-    1,
-    Math.ceil(GRAPHICS_IMAGES.length / ITEMS_PER_PAGE),
-  );
+  const totalPages = Math.max(1, Math.ceil(images.length / ITEMS_PER_PAGE));
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = Math.min(
-    startIndex + ITEMS_PER_PAGE,
-    GRAPHICS_IMAGES.length,
-  );
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, images.length);
   const pagedImages = useMemo(
-    () => GRAPHICS_IMAGES.slice(startIndex, endIndex),
-    [startIndex, endIndex],
+    () => images.slice(startIndex, endIndex),
+    [startIndex, endIndex, images],
   );
 
   const paginationItems = useMemo(() => {
@@ -401,15 +503,16 @@ export default function GraphicsPage() {
     return items;
   }, [currentPage, totalPages]);
 
+  // Load images only for the current tab
   useEffect(() => {
     let isActive = true;
     let loadedCount = 0;
     const totalImages = pagedImages.length;
 
-    setIsPageLoading(true);
+    setIsLoading(true);
 
     if (totalImages === 0) {
-      setIsPageLoading(false);
+      setIsLoading(false);
       return undefined;
     }
 
@@ -419,13 +522,13 @@ export default function GraphicsPage() {
       img.onload = () => {
         loadedCount += 1;
         if (isActive && loadedCount === totalImages) {
-          setIsPageLoading(false);
+          setIsLoading(false);
         }
       };
       img.onerror = () => {
         loadedCount += 1;
         if (isActive && loadedCount === totalImages) {
-          setIsPageLoading(false);
+          setIsLoading(false);
         }
       };
     });
@@ -435,6 +538,130 @@ export default function GraphicsPage() {
     };
   }, [pagedImages]);
 
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({
+      top:
+        document
+          .querySelector(`[data-tab-id="${tabId}"]`)
+          ?.getBoundingClientRect().top ?? 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <div data-tab-id={tabId} className="w-full">
+      {isLoading && (
+        <div className="space-y-4">
+          <div className="text-center text-sm md:text-base text-muted-foreground">
+            Loading designs… please wait.
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
+            {Array.from({ length: Math.max(1, pagedImages.length) }).map(
+              (_, index) => (
+                <Skeleton
+                  key={`skeleton-${tabId}-${index}`}
+                  className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg"
+                />
+              ),
+            )}
+          </div>
+        </div>
+      )}
+
+      <div
+        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6 transition-opacity duration-500 ${
+          isLoading ? "opacity-0 hidden" : "opacity-100"
+        }`}
+      >
+        {pagedImages.map((imageName, index) => (
+          <div
+            key={`${tabId}-${imageName}-${index}`}
+            className="group relative w-full overflow-hidden rounded-lg hover:scale-[1.02] transition-transform duration-300"
+          >
+            <div className="w-full relative bg-primary/5 flex items-center justify-center overflow-hidden">
+              <Image
+                src={`/visuals page/${imageName}`}
+                alt={`Design - ${imageName.replace(/\.(png|webp|jpg)$/i, "")}`}
+                width={800}
+                height={600}
+                className="w-full h-auto"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+
+              {/* Subtle overlay on hover */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-300" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {totalPages > 1 && (
+        <div className="mt-8 flex flex-col items-center gap-4">
+          <p className="text-xs sm:text-sm text-muted-foreground">
+            Showing {startIndex + 1}–{endIndex} of {images.length}
+          </p>
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious
+                  href="#"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    handlePageChange(Math.max(1, currentPage - 1));
+                  }}
+                  className={
+                    currentPage === 1 ? "pointer-events-none opacity-50" : ""
+                  }
+                  aria-disabled={currentPage === 1}
+                />
+              </PaginationItem>
+
+              {paginationItems.map((item, index) =>
+                item === "ellipsis" ? (
+                  <PaginationItem key={`ellipsis-${tabId}-${index}`}>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                ) : (
+                  <PaginationItem key={`page-${tabId}-${item}`}>
+                    <PaginationLink
+                      href="#"
+                      isActive={item === currentPage}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        handlePageChange(item);
+                      }}
+                    >
+                      {item}
+                    </PaginationLink>
+                  </PaginationItem>
+                ),
+              )}
+
+              <PaginationItem>
+                <PaginationNext
+                  href="#"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    handlePageChange(Math.min(totalPages, currentPage + 1));
+                  }}
+                  className={
+                    currentPage === totalPages
+                      ? "pointer-events-none opacity-50"
+                      : ""
+                  }
+                  aria-disabled={currentPage === totalPages}
+                />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function GraphicsPage() {
   return (
     <main className="w-full min-h-screen bg-white dark:bg-black">
       <Navbar />
@@ -453,7 +680,7 @@ export default function GraphicsPage() {
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-3 md:mb-4">
             Visual & Graphic Design
           </h1>
-          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mb-8">
             A comprehensive showcase of brand identities, visual systems, and
             design assets crafted for Web3 projects, campaigns, and digital
             experiences.
@@ -461,114 +688,48 @@ export default function GraphicsPage() {
         </div>
       </section>
 
-      {/* Grid Section */}
+      {/* Tabbed Design Section */}
       <section className="w-full px-3 md:px-8 lg:px-12 pb-12 md:pb-20">
-        <div className="max-w-[1800px] mx-auto">
-          {isPageLoading && (
-            <div className="space-y-4">
-              <div className="text-center text-sm md:text-base text-muted-foreground">
-                Loading visuals for page {currentPage}… please wait.
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-                {Array.from({
-                  length: Math.max(1, pagedImages.length),
-                }).map((_, index) => (
-                  <Skeleton
-                    key={`skeleton-${index}`}
-                    className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-lg"
-                  />
+        <div className="max-w-[2000px] mx-auto">
+          <Tabs defaultValue="branding" className="w-full">
+            {/* Tabs Navigation */}
+            <div className="mb-8 overflow-hidden rounded-lg border border-border bg-muted/50 p-1">
+              <TabsList className="w-full flex flex-wrap gap-2 bg-transparent p-0 h-auto">
+                {DESIGN_TABS.map((tab) => (
+                  <TabsTrigger
+                    key={tab.id}
+                    value={tab.id}
+                    className="data-[state=active]:bg-background data-[state=active]:shadow-sm rounded-md px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium transition-all hover:bg-background/50"
+                  >
+                    <span className="hidden sm:inline">{tab.label}</span>
+                    <span className="sm:hidden text-xs">{tab.label}</span>
+                  </TabsTrigger>
                 ))}
-              </div>
+              </TabsList>
             </div>
-          )}
 
-          <div
-            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 transition-opacity duration-500 ${
-              isPageLoading ? "opacity-0 hidden" : "opacity-100"
-            }`}
-          >
-            {pagedImages.map((imageName, index) => (
-              <div
-                key={`${imageName}-${index}`}
-                className="group relative w-full overflow-hidden rounded-lg hover:scale-[1.02] transition-transform duration-300"
+            {/* Tab Contents */}
+            {DESIGN_TABS.map((tab) => (
+              <TabsContent
+                key={`content-${tab.id}`}
+                value={tab.id}
+                className="w-full space-y-6"
               >
-                {/* Image Container */}
-                <div className="w-full relative bg-primary/5 flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={`/visuals page/${imageName}`}
-                    alt={`Graphic design - ${imageName.replace(/\.(png|webp|jpg)$/i, "")}`}
-                    width={1200}
-                    height={800}
-                    className="w-full h-auto object-contain"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-
-                  {/* Subtle overlay on hover */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-300" />
+                {/* Tab Description */}
+                <div className="mb-6">
+                  <h2 className="text-xl md:text-2xl font-semibold text-primary mb-2">
+                    {tab.label}
+                  </h2>
+                  <p className="text-muted-foreground text-sm md:text-base">
+                    {tab.description}
+                  </p>
                 </div>
-              </div>
+
+                {/* Design Grid with Lazy Loading */}
+                <DesignTabContent images={tab.images} tabId={tab.id} />
+              </TabsContent>
             ))}
-          </div>
-
-          <div className="mt-10 flex flex-col items-center gap-4">
-            <p className="text-xs sm:text-sm text-muted-foreground">
-              Showing {startIndex + 1}–{endIndex} of {GRAPHICS_IMAGES.length}
-            </p>
-            <Pagination>
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious
-                    href="#"
-                    onClick={(event) => {
-                      event.preventDefault();
-                      handlePageChange(Math.max(1, currentPage - 1));
-                    }}
-                    className={
-                      currentPage === 1 ? "pointer-events-none opacity-50" : ""
-                    }
-                    aria-disabled={currentPage === 1}
-                  />
-                </PaginationItem>
-
-                {paginationItems.map((item, index) =>
-                  item === "ellipsis" ? (
-                    <PaginationItem key={`ellipsis-${index}`}>
-                      <PaginationEllipsis />
-                    </PaginationItem>
-                  ) : (
-                    <PaginationItem key={`page-${item}`}>
-                      <PaginationLink
-                        href="#"
-                        isActive={item === currentPage}
-                        onClick={(event) => {
-                          event.preventDefault();
-                          handlePageChange(item);
-                        }}
-                      >
-                        {item}
-                      </PaginationLink>
-                    </PaginationItem>
-                  ),
-                )}
-
-                <PaginationItem>
-                  <PaginationNext
-                    href="#"
-                    onClick={(event) => {
-                      event.preventDefault();
-                      handlePageChange(Math.min(totalPages, currentPage + 1));
-                    }}
-                    className={
-                      currentPage === totalPages
-                        ? "pointer-events-none opacity-50"
-                        : ""
-                    }
-                    aria-disabled={currentPage === totalPages}
-                  />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
-          </div>
+          </Tabs>
         </div>
       </section>
 
