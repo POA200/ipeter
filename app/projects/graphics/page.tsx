@@ -645,7 +645,7 @@ export default function GraphicsPage() {
       {/* Tabbed Design Section */}
       <section className="w-full px-3 md:px-8 lg:px-12 pb-12 md:pb-20">
         <div className="max-w-[2000px] mx-auto">
-          <Tabs defaultValue="branding" className="w-full">
+          <Tabs defaultValue="social-posters" className="w-full">
             {/* Tabs Navigation */}
             <div className="mb-8 overflow-hidden rounded-lg border border-border bg-muted/50 p-1">
               <TabsList className="w-full flex flex-wrap gap-2 bg-transparent p-0 h-auto">

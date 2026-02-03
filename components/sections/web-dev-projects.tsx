@@ -184,7 +184,7 @@ export function ViewAllWebDevButton() {
       <Button
         asChild
         size="lg"
-        className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-all"
+        className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-all w-full"
       >
         <a href="/projects/web-dev">
           View All Web Dev Projects <ArrowRight className="ml-2 size-4" />
