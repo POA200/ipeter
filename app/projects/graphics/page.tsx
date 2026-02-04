@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUp } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -21,7 +21,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 // Brand Design Collections
 const BRANDING_DESIGNS = [
   "SW Moodboard.png",
-  "Hero Header.png",
   "BITSTACKS (1).png",
   "BITSTACKS LOGO (2).png",
   "Logo Announcement.png",
@@ -321,6 +320,7 @@ const THREAD_DESIGNS = [
 const ILLUSTRATION_GRAPHICS = [
   "Facktory fun mascot 2.png",
   "Mr smack stickerpack.png",
+  "Hero Header.png",
 ];
 
 // Miscellaneous & Premium Graphics
@@ -607,6 +607,23 @@ function DesignTabContent({
 }
 
 export default function GraphicsPage() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // Track scroll position for back to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when user scrolls down 400px
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <main className="w-full min-h-screen bg-white dark:bg-black">
       <Navbar />
@@ -679,6 +696,19 @@ export default function GraphicsPage() {
       </section>
 
       <Footer />
+
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-all duration-300 ${
+          showBackToTop
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-16 pointer-events-none"
+        }`}
+        aria-label="Back to top"
+      >
+        <ArrowUp className="w-5 h-5" />
+      </button>
     </main>
   );
 }
